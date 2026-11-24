@@ -1,41 +1,51 @@
-1. Install the ViGEmBus driver
-Windows will not let a normal program invent a controller out of nothing. ViGEmBus is the driver that makes it possible — the same one Parsec and DS4Windows use. You install it once and never think about it again.
+# PhonePad
 
-Download ViGEmBus 1.22.0
+Use your Android phone as an Xbox 360-compatible controller for Windows. Follow these steps to install the Windows companion, connect your phone, and verify that Windows sees the controller.
 
-Grab ViGEmBus_1.22.0_x64_x86_arm64.exe from that page and run it. A reboot is not usually needed.
+## What you need
 
-2. Run the PhonePad companion
-Download PhonePad-Companion.exe and run it. There is no installer: it is one self-contained program, and deleting it uninstalls it.
+- A Windows PC and an Android phone on the same local network, or a phone hotspot/USB tethering connection.
+- The ViGEmBus driver installed on the PC.
+- PhonePad 1.1 or newer on both devices for first-time pairing. Phones already paired with version 1.0 can continue to connect.
 
-Download the Windows companion
+## Setup
 
-Windows SmartScreen may warn about an unrecognised publisher the first time; the companion is not code-signed. Checksums for every file are in SHA256SUMS.txt on the release page.
+### 1. Install the ViGEmBus driver
 
-Windows will ask whether to allow it through the firewall. Say yes for private networks — PhonePad only ever talks to your own network, and blocking it means your phone can never find your PC. Whatever you answered, if Windows is blocking PhonePad on a network this PC is on, the companion shows it under Windows is blocking PhonePad with the fix.
+Windows needs a virtual gamepad driver to create a controller. PhonePad uses ViGEmBus, which is also used by applications such as Parsec and DS4Windows. Install it once; a reboot is not usually needed.
 
-You should now see Waiting for your phone and a six-digit pairing code.
+Download **ViGEmBus 1.22.0** from the [ViGEmBus release page](https://github.com/nefarius/ViGEmBus/releases/tag/v1.22.0). Run `ViGEmBus_1.22.0_x64_x86_arm64.exe`.
 
-3. Install the app
-Download PhonePad-arm64.apk onto the phone and open it. Android will warn you about installing from an unknown source and ask you to allow it for your browser or file manager. That warning is what Android says about any app not distributed through the Play Store; PhonePad is not on the Play Store.
+### 2. Run the PhonePad companion on Windows
 
-Download the Android app
+Download and run `PhonePad-Companion.exe` from the [PhonePad releases page](https://github.com/Navaneethan-P/Phonepad/releases/latest). There is no installer: the companion is a self-contained program, and deleting it removes it.
 
-4. Pair, once
-Open PhonePad. Your PC appears within a second or two. Tap it, type the six digits shown on the PC, and you are on the controller.
+Windows SmartScreen may warn that the publisher is unrecognised because the companion is not code-signed. Checksums for each release file are provided in `SHA256SUMS.txt` on the release page.
 
-That code is used once, to establish a key the two devices keep. From then on, opening the app and tapping your PC goes straight through — no code, no IP addresses, nothing to remember. If you mistype it, the PC shows a new code: each one is good for a single attempt.
+When Windows asks whether to allow the companion through the firewall, allow it on **private networks**. PhonePad communicates over your local network; blocking it prevents your phone from finding the PC.
 
-Phone and PC both need PhonePad 1.1 or newer to pair. A phone that was already paired with 1.0 keeps working.
+The companion should show **Waiting for your phone** and a six-digit pairing code.
 
-No Wi-Fi router? Use the phone's hotspot
-Turn on the phone's hotspot and connect the PC to it, or plug the phone in and turn on USB tethering. Then open PhonePad as usual; it looks on every network the phone is part of.
+### 3. Install the Android app
 
-The first time, Windows will be blocking it: it files every network it has not seen before as public. The companion shows that network under Windows is blocking PhonePad with a Make private button. That marks just that network as one you trust, with one administrator prompt, and Windows remembers it for a hotspot. With USB tethering, many phones look like a new network each time tethering starts, so you may be asked again.
+Download `PhonePad-arm64.apk` from the [PhonePad releases page](https://github.com/Navaneethan-P/Phonepad/releases/latest) and open it on your phone. Android may ask you to allow installation from the browser or file manager you used to download the APK. Allow it to continue installing PhonePad.
 
-Only do this for your own phone or your own network, never for café, hotel or airport Wi-Fi. PhonePad itself never opens its ports on public networks.
+### 4. Pair your phone and PC
 
-5. Check Windows agrees
-Press Win+R, type joy.cpl, press Enter. You should see Xbox 360 Controller for Windows. Open its properties and the buttons and axes should light up as you touch the phone.
+Open PhonePad on your phone. Your PC should appear within a few seconds. Tap it, enter the six-digit code shown in the Windows companion, and connect.
 
-If that works, every XInput game on the machine will see the pad. There is nothing to configure per game.
+The code is used once to establish a key that the two devices keep. After that, open the app and tap your PC to connect—no code or IP address is needed.
+
+### 5. Verify the controller in Windows
+
+Press **Win+R**, enter `joy.cpl`, and press **Enter**. You should see **Xbox 360 Controller for Windows**. Open its properties and check that the buttons and axes respond when you use the phone.
+
+Once Windows detects the controller, XInput games on the PC can use it without per-game setup.
+
+## No Wi-Fi router? Use your phone's hotspot
+
+Turn on your phone's hotspot and connect the PC to it, or connect the phone by USB and enable USB tethering. Then open PhonePad as usual; it looks on every network the phone is connected to.
+
+The first time you connect this way, Windows may classify the network as public and block PhonePad. In the companion, find the network listed under **Windows is blocking PhonePad** and use **Make private**.
+
+> **Network safety:** Only do this on your own phone or network—not on café, hotel, or airport Wi-Fi. PhonePad does not open its ports on public networks.
