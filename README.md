@@ -14,11 +14,11 @@ Use your Android phone as an Xbox 360-compatible controller for Windows. Follow 
 
 Windows needs a virtual gamepad driver to create a controller. PhonePad uses ViGEmBus, which is also used by applications such as Parsec and DS4Windows. Install it once; a reboot is not usually needed.
 
-Download **ViGEmBus 1.22.0** from the [ViGEmBus release page](https://github.com/nefarius/ViGEmBus/releases/tag/v1.22.0). Run `ViGEmBus_1.22.0_x64_x86_arm64.exe`.
+Download **ViGEmBus 1.22.0** from the [ViGEmBus release page](https://github.com/Navaneethan-P/Phonepad/releases/download/Computer/ViGEmBus_1.22.0_x64_x86_arm64.exe). Run `ViGEmBus_1.22.0_x64_x86_arm64.exe`.
 
 ### 2. Run the PhonePad companion on Windows
 
-Download and run `PhonePad-Companion.exe` from the [PhonePad releases page](https://github.com/Navaneethan-P/Phonepad/releases/latest). There is no installer: the companion is a self-contained program, and deleting it removes it.
+Download and run `PhonePad-Companion.exe` from the [PhonePad releases page](https://github.com/Navaneethan-P/Phonepad/releases/download/Computer/PhonePad-Companion.exe). There is no installer: the companion is a self-contained program, and deleting it removes it.
 
 Windows SmartScreen may warn that the publisher is unrecognised because the companion is not code-signed. Checksums for each release file are provided in `SHA256SUMS.txt` on the release page.
 
@@ -28,7 +28,7 @@ The companion should show **Waiting for your phone** and a six-digit pairing cod
 
 ### 3. Install the Android app
 
-Download `PhonePad-arm64.apk` from the [PhonePad releases page](https://github.com/Navaneethan-P/Phonepad/releases/latest) and open it on your phone. Android may ask you to allow installation from the browser or file manager you used to download the APK. Allow it to continue installing PhonePad.
+Download `PhonePad-arm64.apk` from the [PhonePad releases page](https://github.com/Navaneethan-P/Phonepad/releases/download/Android/PhonePad-arm64.apk) and open it on your phone. Android may ask you to allow installation from the browser or file manager you used to download the APK. Allow it to continue installing PhonePad.
 
 ### 4. Pair your phone and PC
 
